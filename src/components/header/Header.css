@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-s) 0;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.header__nav {
+  max-width: 640px;
+  width: 100%;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav-link {
+  text-decoration: none;
+}
+
+.header__nav-link-text:hover {
+  color: var(--secondary-color-hover);
+}
+
+.header__nav-link-text:active {
+  color: var(--secondary-color-on-click);
+}

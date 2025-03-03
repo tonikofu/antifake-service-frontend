@@ -1,0 +1,40 @@
+.h_one {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 59px;
+  color: var(--primary-color-dark);
+  letter-spacing: 0;
+  font-style: italic;
+}
+
+.h_two {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+  color: var(--secondary-color);
+  letter-spacing: 0;
+}
+
+.h_three {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33px;
+  color: var(--secondary-color);
+  letter-spacing: 0;
+}
+
+.h_four {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  color: var(--secondary-color);
+  letter-spacing: 0;
+}
+
+.p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  color: var(--secondary-color);
+  letter-spacing: 0;
+}

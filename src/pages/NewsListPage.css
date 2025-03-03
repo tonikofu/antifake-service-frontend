@@ -1,0 +1,18 @@
+.news-page {
+  width: 100%;
+}
+
+.news-page__title {
+  margin-top: var(--margin-m);
+  margin-bottom: var(--margin-m);
+}
+
+.news-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xxl);
+}
+
+.news-page__list-item {
+  width: 100%;
+}
