@@ -1,28 +1,19 @@
 :root {
   /* Colors */
-  --background-color: #f7f9fc;
-  --primary-color-hover: #edf4ff;
-  --primary-color-on-click: #d3e4ff;
-  --primary-color-dark: #06f;
-  --primary-color-dark-hover: #297fff;
-  --primary-color-dark-on-click: #005ce5;
-  --primary-color-dark-disabled: #c1c1c1;
-  --primary-color-light: #e6f0ff;
-  --primary-color-light-hover: #d9e8ff;
-  --primary-color-light-on-click: #c0d9ff;
-  --primary-color-active: #83b4ff;
-  --primary-color-focus: #3d8aff;
-  --secondary-color: #393939;
-  --secondary-color-hover: #585858;
-  --secondary-color-on-click: #1f1f1f;
-  --secondary-color-light: #bababa;
-  --secondary-color-light-hover: #a3a3a3;
-  --secondary-color-light-active: #8f8f8f;
-  --success-color: #00d02e;
-  --success-color-light: #ccffe0;
-  --error-color: #d00000;
-  --error-color-light: #ffd9d9;
-  --white-color: #fff;
+  --background-color: #fafbff;
+  --primary-color-dark: #4361ee;
+  --primary-color-dark-hover: #3b54d3;
+  --primary-color-dark-on-click: #2f44b0;
+  --primary-color-dark-disabled: #c8ccd6;
+  --secondary-color: #1e293b;
+  --secondary-color-hover: #334155;
+  --secondary-color-on-click: #0f172a;
+  --secondary-color-light: #94a3b8;
+  --success-color: #059669;
+  --success-color-light: #d1fae5;
+  --error-color: #dc2626;
+  --error-color-light: #fee2e2;
+  --white-color: #ffffff;
 
   /* Fonts */
   --font-family: roboto, sans-serif;
@@ -34,8 +25,8 @@
   --padding-l: 64px;
   --padding-xl: 96px;
   --padding-xxl: 256px;
-  --margin-xs: 35px;
-  --margin-s: 40px;
+  --margin-xs: 16px;
+  --margin-s: 32px;
   --margin-m: 50px;
   --margin-l: 65px;
   --margin-xl: 85px;

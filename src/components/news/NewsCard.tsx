@@ -1,22 +1,23 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import Button from "@/shared/ui/button/Button";
 import { Typography } from "@/shared/ui/typography/Typography";
 import { News } from "@/shared/types/news";
 
 import "./NewsCard.css";
+import Button from "@/shared/ui/button/Button";
 
 type NewsCardProps = {
   news: News;
 };
 
 const NewsCard = ({ news }: NewsCardProps) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleReadMore = () => {
-  //   navigate(`/news/${news.id}`);
-  // };
+  const handleReadMore = () => {
+    navigate(`/news/${news.id}`);
+  };
 
   return (
     <div className="news-card">
@@ -38,6 +39,10 @@ const NewsCard = ({ news }: NewsCardProps) => {
       <Typography.p className="news-card__content">
         {news.content.slice(0, 1024)}...
       </Typography.p>
+
+      <Button className="news-card__button" onClick={handleReadMore}>
+        Читать полностью
+      </Button>
     </div>
   );
 };

@@ -6,29 +6,23 @@ import { Typography } from "@/shared/ui/typography/Typography";
 const Header = () => {
   return (
     <header className="header">
-      <Typography.h1>AntiFake</Typography.h1>
+      <Typography.h1 className="header__title">AntiFake</Typography.h1>
 
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
             <a href="#" className="header__nav-link">
-              <Typography.p className="header__nav-link-text">
-                Новости
-              </Typography.p>
+              <p className="header__nav-link-text">Новости</p>
             </a>
           </li>
           <li className="header__nav-item">
             <a href="#" className="header__nav-link">
-              <Typography.p className="header__nav-link-text">
-                Предсказание
-              </Typography.p>
+              <p className="header__nav-link-text">Предсказание</p>
             </a>
           </li>
           <li className="header__nav-item">
             <a href="#" className="header__nav-link">
-              <Typography.p className="header__nav-link-text">
-                Модели
-              </Typography.p>
+              <p className="header__nav-link-text">Модели</p>
             </a>
           </li>
         </ul>
