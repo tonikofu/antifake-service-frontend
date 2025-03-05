@@ -1,8 +1,9 @@
 export type News = {
   id: string;
   title: string;
-  content: string;
-  predictionDate: string;
-  isPredictedAsFake: boolean;
+  article: string;
+  className: "FAKE" | "REAL";
   probability: number;
+  source: string;
+  createdAt: string;
 };

@@ -58,8 +58,15 @@
   color: var(--success-color);
 }
 
-.news-card__button {
+.news-card__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-top: var(--margin-s);
+  justify-content: space-between;
+}
+
+.news-card__button {
   background-color: var(--secondary-color);
 }
 

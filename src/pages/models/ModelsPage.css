@@ -1,0 +1,14 @@
+.models-page {
+  padding: var(--padding-m);
+}
+
+.models-page__title {
+  color: var(--secondary-color);
+  margin-bottom: var(--margin-m);
+}
+
+.models-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--gap-l);
+}
