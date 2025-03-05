@@ -18,7 +18,8 @@ const NewsListPage = () => {
         const data = await fetchNews();
         setNewsList(data);
       } catch (error) {
-        setError('Failed to load news');
+        setError("Failed to load news");
+        console.log(error);
       } finally {
         setIsLoading(false);
       }

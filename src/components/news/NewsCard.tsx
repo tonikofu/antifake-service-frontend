@@ -25,14 +25,14 @@ const NewsCard = ({ news }: NewsCardProps) => {
         <div className="news-card__prediction">
           <span
             className={`news-card__status ${
-              news.className === "FAKE" ? "news-card__status_fake" : "news-card__status_real"
+              news.className === "FAKE"
+                ? "news-card__status_fake"
+                : "news-card__status_real"
             }`}
           >
             {news.className}
           </span>
-          <Typography.p>
-            {news.probability.toFixed(1)}%
-          </Typography.p>
+          <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
         </div>
         <Typography.p>
           {new Date(news.createdAt).toLocaleDateString()}
@@ -48,9 +48,7 @@ const NewsCard = ({ news }: NewsCardProps) => {
         <Button className="news-card__button" onClick={handleReadMore}>
           Читать полностью
         </Button>
-        <Typography.p className="news-card__source">
-          {news.source}
-        </Typography.p>
+        <Typography.p className="news-card__source">{news.source}</Typography.p>
       </div>
     </div>
   );
