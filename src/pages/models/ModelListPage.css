@@ -13,3 +13,12 @@
   grid-template-rows: 1fr 1fr;
   gap: var(--gap-xxl);
 }
+
+.models-page__loader {
+  margin-top: var(--margin-m);
+}
+
+.models-page__error {
+  color: var(--error-color);
+  margin-top: var(--margin-m);
+}

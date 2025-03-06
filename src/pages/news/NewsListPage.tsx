@@ -29,7 +29,7 @@ const NewsListPage = () => {
   }, []);
 
   if (isLoading) {
-    return <Typography.p>Загрузка...</Typography.p>;
+    return <Typography.p className="news-page__loader">Загрузка...</Typography.p>;
   }
 
   if (error) {

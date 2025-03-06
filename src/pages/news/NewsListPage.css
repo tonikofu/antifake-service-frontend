@@ -17,8 +17,11 @@
   width: 100%;
 }
 
+.news-page__loader {
+  margin-top: var(--margin-m);
+}
+
 .news-page__error {
   color: var(--error-color);
-  text-align: center;
   margin-top: var(--margin-m);
 }

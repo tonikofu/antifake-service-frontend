@@ -16,7 +16,7 @@ const ModelListPage: React.FC = () => {
         const data = await fetchModels();
         setModelsList(data);
       } catch (error) {
-        setError("Ошибка получения новостей");
+        setError("Ошибка получения моделей");
         console.log(error);
       } finally {
         setIsLoading(false);
@@ -27,11 +27,11 @@ const ModelListPage: React.FC = () => {
   }, []);
 
   if (isLoading) {
-    return <Typography.p>Загрузка...</Typography.p>;
+    return <Typography.p className="models-page__loader">Загрузка...</Typography.p>;
   }
 
   if (error) {
-    return <Typography.p className="news-page__error">{error}</Typography.p>;
+    return <Typography.p className="models-page__error">{error}</Typography.p>;
   }
 
   return (
