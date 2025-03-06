@@ -12,9 +12,9 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
-            <NavLink 
-              to="/news" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/news"
+              className={({ isActive }) =>
                 `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
               }
             >
@@ -22,9 +22,9 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="header__nav-item">
-            <NavLink 
-              to="/prediction" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/prediction"
+              className={({ isActive }) =>
                 `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
               }
             >
@@ -32,9 +32,9 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="header__nav-item">
-            <NavLink 
-              to="/models" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/models"
+              className={({ isActive }) =>
                 `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
               }
             >

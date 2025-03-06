@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-
-import NewsCard from "@/components/news/NewsCard";
-import { fetchNews } from "@/shared/api/newsApi";
+import ModelCard from "@/components/model/ModelCard";
+import "./ModelListPage.css";
 import { Typography } from "@/shared/ui/typography/Typography";
-import { News } from "@/shared/types/news";
+import { Model } from "@/shared/types/model";
+import { fetchModels } from "@/shared/api/modelsApi";
 
-import "./NewsListPage.css";
-
-const NewsListPage = () => {
-  const [newsList, setNewsList] = useState<News[]>([]);
+const ModelListPage: React.FC = () => {
+  const [modelsList, setModelsList] = useState<Model[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadNews = async () => {
       try {
-        const data = await fetchNews();
-        setNewsList(data);
+        const data = await fetchModels();
+        setModelsList(data);
       } catch (error) {
         setError("Ошибка получения новостей");
         console.log(error);
@@ -37,15 +35,15 @@ const NewsListPage = () => {
   }
 
   return (
-    <div className="news-page">
-      <Typography.h2 className="news-page__title">Новости</Typography.h2>
-      <div className="news-page__list">
-        {newsList.map((news) => (
-          <NewsCard key={news.id} news={news} />
+    <div className="models-page">
+      <Typography.h2 className="models-page__title">Модели</Typography.h2>
+      <div className="models-page__grid">
+        {modelsList.map((model) => (
+          <ModelCard key={model.id} model={model} />
         ))}
       </div>
     </div>
   );
 };
 
-export default NewsListPage;
+export default ModelListPage;

@@ -4,11 +4,11 @@ export const fetchNews = async (): Promise<News[]> => {
   try {
     const response = await fetch("/api/news");
     if (!response.ok) {
-      throw new Error("Failed to fetch news");
+      throw new Error("Ошибка при получении новостей");
     }
     return await response.json();
   } catch (error) {
-    console.error("Error fetching news:", error);
+    console.error("Ошибка при получении новостей:", error);
     throw error;
   }
 };
