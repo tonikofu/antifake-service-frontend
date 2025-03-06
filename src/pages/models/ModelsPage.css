@@ -1,14 +1,15 @@
 .models-page {
-  padding: var(--padding-m);
+  width: 100%;
 }
 
 .models-page__title {
-  color: var(--secondary-color);
+  margin-top: var(--margin-m);
   margin-bottom: var(--margin-m);
 }
 
 .models-page__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: var(--gap-l);
 }

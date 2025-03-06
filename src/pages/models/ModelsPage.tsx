@@ -1,12 +1,13 @@
 import React from "react";
 import ModelCard from "@/components/model/ModelCard";
 import "./ModelsPage.css";
+import { Typography } from "@/shared/ui/typography/Typography";
 
 // Моковые данные для моделей
 const mockModels = [
   {
-    name: "Face Detection Model v1",
-    accuracy: 89.5,
+    name: "Fake Detection Model v1",
+    accuracy: 90.5,
   },
   {
     name: "Image Classification Model",
@@ -21,7 +22,7 @@ const mockModels = [
 const ModelsPage: React.FC = () => {
   return (
     <div className="models-page">
-      <h1 className="models-page__title">AI Models</h1>
+      <Typography.h2 className="models-page__title">Модели</Typography.h2>
       <div className="models-page__grid">
         {mockModels.map((model, index) => (
           <ModelCard key={index} name={model.name} accuracy={model.accuracy} />

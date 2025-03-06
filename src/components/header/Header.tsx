@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./Header.css";
 import { Typography } from "@/shared/ui/typography/Typography";
@@ -6,24 +7,39 @@ import { Typography } from "@/shared/ui/typography/Typography";
 const Header = () => {
   return (
     <header className="header">
-      <Typography.h1 className="header__title">AntiFake</Typography.h1>
+      <Typography.h1 className="header__title">АнтиФейк</Typography.h1>
 
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li className="header__nav-item">
-            <a href="#" className="header__nav-link">
+            <NavLink 
+              to="/news" 
+              className={({ isActive }) => 
+                `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
+              }
+            >
               <p className="header__nav-link-text">Новости</p>
-            </a>
+            </NavLink>
           </li>
           <li className="header__nav-item">
-            <a href="#" className="header__nav-link">
+            <NavLink 
+              to="/prediction" 
+              className={({ isActive }) => 
+                `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
+              }
+            >
               <p className="header__nav-link-text">Предсказание</p>
-            </a>
+            </NavLink>
           </li>
           <li className="header__nav-item">
-            <a href="#" className="header__nav-link">
+            <NavLink 
+              to="/models" 
+              className={({ isActive }) => 
+                `header__nav-link ${isActive ? "header__nav-link--active" : ""}`
+              }
+            >
               <p className="header__nav-link-text">Модели</p>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

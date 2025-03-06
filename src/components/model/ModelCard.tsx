@@ -14,7 +14,7 @@ const ModelCard = ({ name, accuracy }: ModelCardProps) => {
       </div>
       <div className="model-card__content">
         <div className="model-card__accuracy">
-          <Typography.h3>Точность</Typography.h3>
+          <Typography.h5>Точность</Typography.h5>
           <div
             className={`model-card__status ${accuracy >= 90 ? "model-card__status_high" : "model-card__status_medium"}`}
           >

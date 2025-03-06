@@ -1,16 +1,14 @@
 :root {
   /* Colors */
   --background-color: #fafbff;
-  --primary-color-dark: #4361ee;
-  --primary-color-dark-hover: #3b54d3;
-  --primary-color-dark-on-click: #2f44b0;
-  --primary-color-dark-disabled: #c8ccd6;
-  --secondary-color: #1e293b;
-  --secondary-color-hover: #334155;
-  --secondary-color-on-click: #0f172a;
-  --secondary-color-light: #94a3b8;
+  --primary-color: #1e293b;
+  --primary-color-hover: #334155;
+  --primary-color-on-click: #0f172a;
+  --primary-color-light: #94a3b8;
   --success-color: #059669;
   --success-color-light: #d1fae5;
+  --warning-color: #ca8000;
+  --warning-color-light: #f8ebb5;
   --error-color: #dc2626;
   --error-color-light: #fee2e2;
   --white-color: #ffffff;

@@ -25,6 +25,10 @@ const H4 = ({ children, className }: TypographyProps) => {
   return <h4 className={classNames(styles.h_four, className)}>{children}</h4>;
 };
 
+const H5 = ({ children, className }: TypographyProps) => {
+  return <h5 className={classNames(styles.h_five, className)}>{children}</h5>;
+};
+
 const P = ({ children, className }: TypographyProps) => {
   return <p className={classNames(styles.p, className)}>{children}</p>;
 };
@@ -34,5 +38,6 @@ export const Typography = {
   h2: H2,
   h3: H3,
   h4: H4,
+  h5: H5,
   p: P,
 };
