@@ -27,7 +27,9 @@ const ModelListPage: React.FC = () => {
   }, []);
 
   if (isLoading) {
-    return <Typography.p className="models-page__loader">Загрузка...</Typography.p>;
+    return (
+      <Typography.p className="models-page__loader">Загрузка...</Typography.p>
+    );
   }
 
   if (error) {

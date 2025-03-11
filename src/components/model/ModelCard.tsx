@@ -2,6 +2,7 @@ import React from "react";
 import "./ModelCard.css";
 import { Typography } from "@/shared/ui/typography/Typography";
 import { Model } from "@/shared/types/model";
+import LinkButton from "@/shared/ui/link-button/LinkButton";
 
 type ModelCardProps = {
   model: Model;
@@ -24,6 +25,7 @@ const ModelCard = ({ model }: ModelCardProps) => {
             {model.accuracy.toFixed(1)}%
           </div>
         </div>
+        <LinkButton onClick={() => alert("Clicked")}>Подробнее</LinkButton>
       </div>
     </div>
   );

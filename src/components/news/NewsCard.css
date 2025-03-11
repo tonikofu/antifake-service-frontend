@@ -65,15 +65,3 @@
   margin-top: var(--margin-s);
   justify-content: space-between;
 }
-
-.news-card__button {
-  background-color: var(--primary-color);
-}
-
-.news-card__button:hover {
-  background-color: var(--primary-color-hover);
-}
-
-.news-card__button:active {
-  background-color: var(--primary-color-on-click);
-}
