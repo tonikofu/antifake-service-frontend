@@ -11,7 +11,7 @@ const ModelListPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadNews = async () => {
+    const loadModels = async () => {
       try {
         const data = await fetchModels();
         setModelsList(data);
@@ -23,7 +23,7 @@ const ModelListPage: React.FC = () => {
       }
     };
 
-    loadNews();
+    loadModels();
   }, []);
 
   if (isLoading) {

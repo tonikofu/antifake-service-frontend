@@ -2,26 +2,43 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@/shared/ui/typography/Typography";
 import Button from "@/shared/ui/button/Button";
 import "./PredictionPage.css";
-
-interface Model {
-  id: string;
-  name: string;
-}
+import { fetchModels } from "@/shared/api/modelsApi";
+import { Model } from "@/shared/types/model";
 
 const PredictionPage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  const [models, setModels] = useState<Model[]>([]);
 
-  // TODO: Replace with actual API call
+  const [modelsList, setModelsList] = useState<Model[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
-    // Temporary mock data
-    setModels([
-      { id: "1", name: "FakeNewsDetector_v1" },
-      { id: "2", name: "FakeNewsDetector_v2" },
-    ]);
+    const loadModels = async () => {
+      try {
+        const data = await fetchModels();
+        setModelsList(data);
+      } catch (error) {
+        setError("Ошибка получения моделей");
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadModels();
   }, []);
+
+  if (isLoading) {
+    return (
+      <Typography.p className="models-page__loader">Загрузка...</Typography.p>
+    );
+  }
+
+  if (error) {
+    return <Typography.p className="models-page__error">{error}</Typography.p>;
+  }
 
   const handleModelToggle = (modelId: string) => {
     setSelectedModels((prev) =>
@@ -75,7 +92,7 @@ const PredictionPage = () => {
         <div className="prediction-page__form-group">
           <label>Выберите модели для анализа новости</label>
           <div className="prediction-page__models-list">
-            {models.map((model) => (
+            {modelsList.map((model) => (
               <div key={model.id} className="prediction-page__model-item">
                 <input
                   type="checkbox"

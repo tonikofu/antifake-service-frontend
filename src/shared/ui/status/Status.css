@@ -1,0 +1,20 @@
+.card__status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.card__status_high {
+  background-color: var(--success-color-light);
+  color: var(--success-color);
+}
+
+.card__status_medium {
+  background-color: var(--warning-color-light);
+  color: var(--warning-color);
+}
+
+.card__status_low {
+  background-color: var(--error-color-light);
+  color: var(--error-color);
+}

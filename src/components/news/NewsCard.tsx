@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Typography } from "@/shared/ui/typography/Typography";
 import { News } from "@/shared/types/news";
+import Status from "@/shared/ui/status/Status";
 
 import "./NewsCard.css";
 import Button from "@/shared/ui/button/Button";
@@ -22,15 +23,9 @@ const NewsCard = ({ news }: NewsCardProps) => {
     <div className="news-card">
       <div className="news-card__info">
         <div className="news-card__prediction">
-          <span
-            className={`news-card__status ${
-              news.className === "FAKE"
-                ? "news-card__status_fake"
-                : "news-card__status_real"
-            }`}
-          >
+          <Status status={news.className === "FAKE" ? "low" : "high"}>
             {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
-          </span>
+          </Status>
           <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
         </div>
         <Typography.p>

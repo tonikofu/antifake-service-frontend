@@ -3,12 +3,16 @@ import "./ModelCard.css";
 import { Typography } from "@/shared/ui/typography/Typography";
 import { Model } from "@/shared/types/model";
 import LinkButton from "@/shared/ui/link-button/LinkButton";
+import Status from "@/shared/ui/status/Status";
 
 type ModelCardProps = {
   model: Model;
 };
 
 const ModelCard = ({ model }: ModelCardProps) => {
+  const accuracyPercentage = (model.accuracy).toFixed(1);
+  const accuracy = model.accuracy >= 90 ? "high" : "medium";
+  
   return (
     <div className="model-card">
       <div className="model-card__info">
@@ -19,11 +23,7 @@ const ModelCard = ({ model }: ModelCardProps) => {
       <div className="model-card__content">
         <div className="model-card__accuracy">
           <Typography.h5>Точность</Typography.h5>
-          <div
-            className={`model-card__status ${model.accuracy >= 90 ? "model-card__status_high" : "model-card__status_medium"}`}
-          >
-            {model.accuracy.toFixed(1)}%
-          </div>
+          <Status status={accuracy}>{accuracyPercentage}%</Status>
         </div>
         <LinkButton onClick={() => alert("Clicked")}>Подробнее</LinkButton>
       </div>
