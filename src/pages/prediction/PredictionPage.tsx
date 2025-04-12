@@ -3,9 +3,12 @@ import { Typography } from "@/shared/ui/typography/Typography";
 import Button from "@/shared/ui/button/Button";
 import "./PredictionPage.css";
 import { fetchModels } from "@/shared/api/modelsApi";
+import { createPrediction } from "@/shared/api/predictionApi";
 import { Model } from "@/shared/types/model";
+import { useNavigate } from "react-router-dom";
 
 const PredictionPage = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
@@ -13,6 +16,7 @@ const PredictionPage = () => {
   const [modelsList, setModelsList] = useState<Model[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const loadModels = async () => {
@@ -51,10 +55,24 @@ const PredictionPage = () => {
   const isFormValid =
     title.trim() !== "" && content.trim() !== "" && selectedModels.length > 0;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    console.log({ title, content, selectedModels });
+    if (!isFormValid) return;
+
+    setIsSubmitting(true);
+    try {
+      const response = await createPrediction({
+        title,
+        article: content,
+        modelsId: selectedModels,
+      });
+      navigate(`/news/${response.newsId}`);
+    } catch (error) {
+      setError("Ошибка при отправке формы");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -109,10 +127,10 @@ const PredictionPage = () => {
         <div className="prediction-page__form-footer">
           <Button
             className="prediction-page__submit"
-            onClick={alert}
-            disabled={!isFormValid}
+            onClick={handleSubmit}
+            disabled={!isFormValid || isSubmitting}
           >
-            Проверить
+            {isSubmitting ? "Отправка..." : "Проверить"}
           </Button>
         </div>
       </form>

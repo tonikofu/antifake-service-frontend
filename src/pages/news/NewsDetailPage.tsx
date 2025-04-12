@@ -50,20 +50,22 @@ const NewsDetailPage = () => {
   return (
     <div className="news-detail">
       <div className="news-detail__header">
-        <Button onClick={handleBack}>
-          Назад
-        </Button>
+        <Button onClick={handleBack}>Назад</Button>
         <div className="news-detail__meta">
           <Typography.p>
             {new Date(news.createdAt).toLocaleDateString()}
           </Typography.p>
-          <Typography.p className="news-detail__source">{news.source}</Typography.p>
+          <Typography.p className="news-detail__source">
+            {news.source}
+          </Typography.p>
         </div>
       </div>
 
       <div className="news-detail__title-container">
-        <Typography.h1 className="news-detail__title">{news.title}</Typography.h1>
-        
+        <Typography.h1 className="news-detail__title">
+          {news.title}
+        </Typography.h1>
+
         <div className="news-detail__prediction">
           <Status status={news.className === "FAKE" ? "low" : "high"}>
             {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
@@ -71,7 +73,9 @@ const NewsDetailPage = () => {
           <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
         </div>
 
-        <Typography.p className="news-detail__content">{news.article}</Typography.p>
+        <Typography.p className="news-detail__content">
+          {news.article}
+        </Typography.p>
 
         <div className="news-detail__predictions">
           <Typography.h2>Предсказания моделей</Typography.h2>
@@ -81,7 +85,9 @@ const NewsDetailPage = () => {
                 <Typography.p className="news-detail__model-name">
                   {prediction.modelName}
                 </Typography.p>
-                <Status status={prediction.className === "FAKE" ? "low" : "high"}>
+                <Status
+                  status={prediction.className === "FAKE" ? "low" : "high"}
+                >
                   {prediction.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
                 </Status>
                 <Typography.p>{prediction.probability}%</Typography.p>

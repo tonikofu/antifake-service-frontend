@@ -10,9 +10,9 @@ type ModelCardProps = {
 };
 
 const ModelCard = ({ model }: ModelCardProps) => {
-  const accuracyPercentage = (model.accuracy).toFixed(1);
+  const accuracyPercentage = model.accuracy.toFixed(1);
   const accuracy = model.accuracy >= 90 ? "high" : "medium";
-  
+
   return (
     <div className="model-card">
       <div className="model-card__info">

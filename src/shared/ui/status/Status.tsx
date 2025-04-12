@@ -13,9 +13,9 @@ export type StatusProps = {
 const Status = ({ className, children, status }: StatusProps) => (
   <div
     className={classNames("card__status", className, {
-      "card__status_high": status === "high",
-      "card__status_medium": status === "medium",
-      "card__status_low": status === "low",
+      card__status_high: status === "high",
+      card__status_medium: status === "medium",
+      card__status_low: status === "low",
     })}
   >
     {children}
