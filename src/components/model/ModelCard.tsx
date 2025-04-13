@@ -4,6 +4,7 @@ import { Typography } from "@/shared/ui/typography/Typography";
 import { Model } from "@/shared/types/model";
 import LinkButton from "@/shared/ui/link-button/LinkButton";
 import Status from "@/shared/ui/status/Status";
+import Container from "@/shared/ui/container/Container";
 
 type ModelCardProps = {
   model: Model;
@@ -14,7 +15,7 @@ const ModelCard = ({ model }: ModelCardProps) => {
   const accuracy = model.accuracy >= 90 ? "high" : "medium";
 
   return (
-    <div className="model-card">
+    <Container>
       <div className="model-card__info">
         <Typography.h2 className="model-card__title">
           {model.name}
@@ -27,7 +28,7 @@ const ModelCard = ({ model }: ModelCardProps) => {
         </div>
         <LinkButton onClick={() => alert("Clicked")}>Подробнее</LinkButton>
       </div>
-    </div>
+    </Container>
   );
 };
 

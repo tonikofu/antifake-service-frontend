@@ -2,7 +2,8 @@ import React from "react";
 
 import Header from "@/components/header/Header";
 import { Outlet } from "react-router-dom";
-import Container from "@/components/main/Main";
+import Main from "@/components/main/Main";
+import PageContainer from "@/shared/ui/page-container/PageContainer";
 
 export type GameLayoutProps = {
   children: React.ReactNode;
@@ -12,9 +13,11 @@ const PageLayout = () => {
   return (
     <React.Fragment>
       <Header />
-      <Container>
-        <Outlet />
-      </Container>
+      <Main>
+        <PageContainer>
+          <Outlet />
+        </PageContainer>
+      </Main>
     </React.Fragment>
   );
 };

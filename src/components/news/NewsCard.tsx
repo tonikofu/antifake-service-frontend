@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Typography } from "@/shared/ui/typography/Typography";
 import { News } from "@/shared/types/news";
 import Status from "@/shared/ui/status/Status";
+import Container from "@/shared/ui/container/Container";
 
 import "./NewsCard.css";
 import Button from "@/shared/ui/button/Button";
@@ -20,7 +21,7 @@ const NewsCard = ({ news }: NewsCardProps) => {
   };
 
   return (
-    <div className="news-card">
+    <Container>
       <div className="news-card__info">
         <div className="news-card__prediction">
           <Status status={news.className === "FAKE" ? "low" : "high"}>
@@ -44,7 +45,7 @@ const NewsCard = ({ news }: NewsCardProps) => {
         </Button>
         <Typography.p className="news-card__source">{news.source}</Typography.p>
       </div>
-    </div>
+    </Container>
   );
 };
 

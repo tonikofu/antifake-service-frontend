@@ -8,16 +8,7 @@
 }
 
 .prediction-page__form {
-  padding: var(--padding-s);
-  background-color: var(--white-color);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   gap: var(--gap-s);
-  box-shadow: 30px -16px var(--primary-color);
-  border: 5px solid var(--primary-color);
-  box-sizing: border-box;
 }
 
 .prediction-page__form-group label {

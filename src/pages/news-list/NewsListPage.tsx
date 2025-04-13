@@ -35,18 +35,20 @@ const NewsListPage = () => {
   }
 
   if (error) {
-    return <Typography.p className="news-page__error">{error}</Typography.p>;
+    return (
+      <Typography.p className="news-page__error">{error}</Typography.p>
+    );
   }
 
   return (
-    <div className="news-page">
+    <React.Fragment>
       <Typography.h2 className="news-page__title">Новости</Typography.h2>
       <div className="news-page__list">
         {newsList.map((news) => (
           <NewsCard key={news.id} news={news} />
         ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

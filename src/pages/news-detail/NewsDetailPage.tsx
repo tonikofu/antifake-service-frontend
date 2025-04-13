@@ -7,7 +7,8 @@ import "./NewsDetailPage.css";
 import { NewsDetail } from "@/shared/types/news_detail";
 import { fetchNewsDetail } from "@/shared/api/newsApi";
 import Status from "@/shared/ui/status/Status";
-
+import PageContainer from "@/shared/ui/page-container/PageContainer";
+import Container from "@/shared/ui/container/Container";
 const NewsDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -40,16 +41,24 @@ const NewsDetailPage = () => {
   };
 
   if (loading) {
-    return <Typography.h2>Загрузка...</Typography.h2>;
+    return (
+      <PageContainer>
+        <Typography.h2>Загрузка...</Typography.h2>
+      </PageContainer>
+    );
   }
 
   if (error || !news) {
-    return <Typography.h2>{error || "Новость не найдена"}</Typography.h2>;
+    return (
+      <PageContainer>
+        <Typography.h2>{error || "Новость не найдена"}</Typography.h2>
+      </PageContainer>
+    );
   }
 
   return (
     <React.Fragment>
-       <div className="news-detail__header">
+      <div className="news-detail__header">
         <Button onClick={handleBack}>Назад</Button>
         <div className="news-detail__meta">
           <Typography.p>
@@ -60,43 +69,43 @@ const NewsDetailPage = () => {
           </Typography.p>
         </div>
       </div>
-      <div className="news-detail">
-      <div className="news-detail__title-container">
-        <Typography.h2 className="news-detail__title">
-          {news.title}
-        </Typography.h2>
+      <Container>
+        <div className="news-detail__title-container">
+          <Typography.h2 className="news-detail__title">
+            {news.title}
+          </Typography.h2>
 
-        <div className="news-detail__prediction">
-          <Status status={news.className === "FAKE" ? "low" : "high"}>
-            {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
-          </Status>
-          <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
-        </div>
+          <div className="news-detail__prediction">
+            <Status status={news.className === "FAKE" ? "low" : "high"}>
+              {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
+            </Status>
+            <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
+          </div>
 
-        <Typography.p className="news-detail__content">
-          {news.article}
-        </Typography.p>
+          <Typography.p className="news-detail__content">
+            {news.article}
+          </Typography.p>
 
-        <div className="news-detail__predictions">
-          <Typography.h3>Предсказания моделей</Typography.h3>
-          <div className="news-detail__predictions-list">
-            {news.predictions.map((prediction, index) => (
-              <div key={index} className="news-detail__prediction-item">
-                <Typography.p className="news-detail__model-name">
-                  {prediction.modelName}
-                </Typography.p>
-                <Status
-                  status={prediction.className === "FAKE" ? "low" : "high"}
-                >
-                  {prediction.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
-                </Status>
-                <Typography.p>{prediction.probability}%</Typography.p>
-              </div>
-            ))}
+          <div className="news-detail__predictions">
+            <Typography.h3>Предсказания моделей</Typography.h3>
+            <div className="news-detail__predictions-list">
+              {news.predictions.map((prediction, index) => (
+                <div key={index} className="news-detail__prediction-item">
+                  <Typography.p className="news-detail__model-name">
+                    {prediction.modelName}
+                  </Typography.p>
+                  <Status
+                    status={prediction.className === "FAKE" ? "low" : "high"}
+                  >
+                    {prediction.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
+                  </Status>
+                  <Typography.p>{prediction.probability}%</Typography.p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
     </React.Fragment>
   );
 };

@@ -6,6 +6,7 @@ import { fetchModels } from "@/shared/api/modelsApi";
 import { createPrediction } from "@/shared/api/predictionApi";
 import { Model } from "@/shared/types/model";
 import { useNavigate } from "react-router-dom";
+import Container from "@/shared/ui/container/Container";
 
 const PredictionPage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,9 @@ const PredictionPage = () => {
   }
 
   if (error) {
-    return <Typography.p className="models-page__error">{error}</Typography.p>;
+    return (
+      <Typography.p className="models-page__error">{error}</Typography.p>
+    );
   }
 
   const handleModelToggle = (modelId: string) => {
@@ -76,12 +79,12 @@ const PredictionPage = () => {
   };
 
   return (
-    <div className="prediction-page">
+    <React.Fragment>
       <Typography.h2 className="prediction-page__title">
         Проверка новости
       </Typography.h2>
 
-      <form className="prediction-page__form" onSubmit={handleSubmit}>
+      <Container className="prediction-page__form">
         <div className="prediction-page__form-group">
           <label htmlFor="title">Заголовок новости</label>
           <input
@@ -133,8 +136,8 @@ const PredictionPage = () => {
             {isSubmitting ? "Отправка..." : "Проверить"}
           </Button>
         </div>
-      </form>
-    </div>
+      </Container>
+    </React.Fragment>
   );
 };
 
