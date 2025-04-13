@@ -59,7 +59,7 @@
   line-height: 1.6;
 }
 
-.news-detail__predictions::before  {
+.news-detail__predictions::before {
   display: block;
   content: "";
   width: 100%;

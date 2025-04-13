@@ -42,9 +42,7 @@ const PredictionPage = () => {
   }
 
   if (error) {
-    return (
-      <Typography.p className="models-page__error">{error}</Typography.p>
-    );
+    return <Typography.p className="models-page__error">{error}</Typography.p>;
   }
 
   const handleModelToggle = (modelId: string) => {

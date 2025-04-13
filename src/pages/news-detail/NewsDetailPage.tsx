@@ -9,6 +9,7 @@ import { fetchNewsDetail } from "@/shared/api/newsApi";
 import Status from "@/shared/ui/status/Status";
 import PageContainer from "@/shared/ui/page-container/PageContainer";
 import Container from "@/shared/ui/container/Container";
+
 const NewsDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();

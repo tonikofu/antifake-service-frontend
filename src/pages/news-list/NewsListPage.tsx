@@ -35,9 +35,7 @@ const NewsListPage = () => {
   }
 
   if (error) {
-    return (
-      <Typography.p className="news-page__error">{error}</Typography.p>
-    );
+    return <Typography.p className="news-page__error">{error}</Typography.p>;
   }
 
   return (

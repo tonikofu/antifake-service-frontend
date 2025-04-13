@@ -1,11 +1,11 @@
 import React from "react";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageLayout from "./layouts/page/PageLayout";
 import NewsListPage from "./pages/news-list/NewsListPage";
 import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
-import ModelListPage from "./pages/models/ModelListPage";
+import ModelListPage from "./pages/model-list/ModelListPage";
 import PredictionPage from "./pages/prediction/PredictionPage";
+import ModelDetailsPage from "./pages/model-details/ModelDetailsPage";
 
 const Router = () => {
   return (
@@ -16,6 +16,7 @@ const Router = () => {
           <Route path="/news/:id" element={<NewsDetailPage />} />
           <Route path="/models" element={<ModelListPage />} />
           <Route path="/prediction" element={<PredictionPage />} />
+          <Route path="/models/:modelId" element={<ModelDetailsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

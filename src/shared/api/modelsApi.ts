@@ -12,3 +12,28 @@ export const fetchModels = async (): Promise<Model[]> => {
     throw error;
   }
 };
+
+export interface ModelMetrics {
+  classId: number;
+  className: string;
+  precision: number;
+  recall: number;
+  f1Score: number;
+  support: number;
+}
+
+export interface ModelDetails {
+  modelId: number;
+  modelName: string;
+  metrics: ModelMetrics[];
+}
+
+export const fetchModelDetails = async (
+  modelId: number,
+): Promise<ModelDetails> => {
+  const response = await fetch(`/api/models/${modelId}`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch model details");
+  }
+  return response.json();
+};

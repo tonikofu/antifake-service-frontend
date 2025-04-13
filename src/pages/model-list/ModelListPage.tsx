@@ -5,7 +5,7 @@ import { Typography } from "@/shared/ui/typography/Typography";
 import { Model } from "@/shared/types/model";
 import { fetchModels } from "@/shared/api/modelsApi";
 
-const ModelListPage: React.FC = () => {
+const ModelListPage = () => {
   const [modelsList, setModelsList] = useState<Model[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
