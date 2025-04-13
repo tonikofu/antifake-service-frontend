@@ -48,8 +48,8 @@ const NewsDetailPage = () => {
   }
 
   return (
-    <div className="news-detail">
-      <div className="news-detail__header">
+    <React.Fragment>
+       <div className="news-detail__header">
         <Button onClick={handleBack}>Назад</Button>
         <div className="news-detail__meta">
           <Typography.p>
@@ -60,11 +60,11 @@ const NewsDetailPage = () => {
           </Typography.p>
         </div>
       </div>
-
+      <div className="news-detail">
       <div className="news-detail__title-container">
-        <Typography.h1 className="news-detail__title">
+        <Typography.h2 className="news-detail__title">
           {news.title}
-        </Typography.h1>
+        </Typography.h2>
 
         <div className="news-detail__prediction">
           <Status status={news.className === "FAKE" ? "low" : "high"}>
@@ -78,7 +78,7 @@ const NewsDetailPage = () => {
         </Typography.p>
 
         <div className="news-detail__predictions">
-          <Typography.h2>Предсказания моделей</Typography.h2>
+          <Typography.h3>Предсказания моделей</Typography.h3>
           <div className="news-detail__predictions-list">
             {news.predictions.map((prediction, index) => (
               <div key={index} className="news-detail__prediction-item">
@@ -97,6 +97,7 @@ const NewsDetailPage = () => {
         </div>
       </div>
     </div>
+    </React.Fragment>
   );
 };
 
