@@ -5,7 +5,7 @@
 }
 
 .model-details__table-container {
-  margin-top: 2rem;
+  margin-top: var(--margin-s);
   overflow-x: auto;
 }
 
@@ -18,9 +18,10 @@
 
 .model-details__table th,
 .model-details__table td {
-  padding: 1rem;
+  padding: var(--padding-xs);
   text-align: left;
   border-bottom: 1px solid #eee;
+  border: 1px solid var(--primary-color);
 }
 
 .model-details__table th {
@@ -35,5 +36,5 @@
 .error {
   color: #dc3545;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: var(--margin-s);
 }

@@ -7,7 +7,6 @@ import "./NewsDetailPage.css";
 import { NewsDetail } from "@/shared/types/news_detail";
 import { fetchNewsDetail } from "@/shared/api/newsApi";
 import Status from "@/shared/ui/status/Status";
-import PageContainer from "@/shared/ui/page-container/PageContainer";
 import Container from "@/shared/ui/container/Container";
 
 const NewsDetailPage = () => {
@@ -42,19 +41,11 @@ const NewsDetailPage = () => {
   };
 
   if (loading) {
-    return (
-      <PageContainer>
-        <Typography.h2>Загрузка...</Typography.h2>
-      </PageContainer>
-    );
+    return <Typography.h2>Загрузка...</Typography.h2>;
   }
 
   if (error || !news) {
-    return (
-      <PageContainer>
-        <Typography.h2>{error || "Новость не найдена"}</Typography.h2>
-      </PageContainer>
-    );
+    return <Typography.h2>{error || "Новость не найдена"}</Typography.h2>;
   }
 
   return (
