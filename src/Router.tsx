@@ -2,8 +2,8 @@ import React from "react";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageLayout from "./layouts/page/PageLayout";
-import NewsListPage from "./pages/news/NewsListPage";
-import NewsDetailPage from "./pages/news/NewsDetailPage";
+import NewsListPage from "./pages/news-list/NewsListPage";
+import NewsDetailPage from "./pages/news-detail/NewsDetailPage";
 import ModelListPage from "./pages/models/ModelListPage";
 import PredictionPage from "./pages/prediction/PredictionPage";
 
