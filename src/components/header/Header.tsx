@@ -2,12 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./Header.css";
-import { Typography } from "@/shared/ui/typography/Typography";
+import Logo from "../logo/Logo";
 
 const Header = () => {
   return (
     <header className="header">
-      <Typography.h1 className="header__title">АнтиФейк</Typography.h1>
+      <Logo />
 
       <nav className="header__nav">
         <ul className="header__nav-list">
