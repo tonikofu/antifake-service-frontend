@@ -11,6 +11,7 @@ import Container from "@/shared/ui/container/Container";
 const PredictionPage = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
+  const [source, setSource] = useState("");
   const [content, setContent] = useState("");
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
 
@@ -54,7 +55,7 @@ const PredictionPage = () => {
   };
 
   const isFormValid =
-    title.trim() !== "" && content.trim() !== "" && selectedModels.length > 0;
+    title.trim() !== "" && source.trim() !== "" && content.trim() !== "" && selectedModels.length > 0;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,6 +66,7 @@ const PredictionPage = () => {
       const response = await createPrediction({
         title,
         article: content,
+        source,
         modelsId: selectedModels,
       });
       navigate(`/news/${response.newsId}`);
@@ -92,6 +94,19 @@ const PredictionPage = () => {
             onChange={(e) => setTitle(e.target.value)}
             className="prediction-page__input"
             placeholder="Введите заголовок новости"
+            required
+          />
+        </div>
+
+        <div className="prediction-page__form-group">
+          <label htmlFor="source">Источник новости</label>
+          <input
+            type="text"
+            id="source"
+            value={source}
+            onChange={(e) => setSource(e.target.value)}
+            className="prediction-page__input"
+            placeholder="Введите источник новости"
             required
           />
         </div>

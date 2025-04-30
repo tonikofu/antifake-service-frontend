@@ -116,3 +116,7 @@
 .news-detail__back-button:hover {
   background-color: #e0e0e0;
 }
+
+.news-detail__source {
+  padding-left: var(--padding-xs);
+}

@@ -13,7 +13,7 @@ type ModelCardProps = {
 const ModelCard = ({ model }: ModelCardProps) => {
   const navigate = useNavigate();
   const accuracyPercentage = model.accuracy.toFixed(1);
-  const accuracy = model.accuracy >= 90 ? "high" : "medium";
+  const accuracy = model.accuracy >= 80 ? "high" : "medium";
 
   const handleClick = () => {
     navigate(`/models/${model.id}`);
