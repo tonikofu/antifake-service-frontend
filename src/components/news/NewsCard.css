@@ -8,7 +8,7 @@
   content: "";
   width: 100%;
   height: 1px;
-  margin: 0 0 var(--margin-xs);
+  margin: var(--margin-s) 0 var(--margin-s);
   background-color: var(--primary-color);
 }
 
@@ -21,7 +21,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 var(--padding-xs);
 }
 
 .news-card__prediction {
@@ -52,4 +51,10 @@
   align-items: center;
   margin-top: var(--margin-s);
   justify-content: space-between;
+}
+
+.news-card__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
 }

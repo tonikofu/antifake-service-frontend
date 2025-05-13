@@ -1,48 +1,48 @@
 .h_one {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 59px;
+  line-height: 1.2;
   color: var(--primary-color);
   letter-spacing: 0;
   font-style: italic;
 }
 
 .h_two {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 500;
-  line-height: 38px;
+  line-height: 1.2;
   color: var(--primary-color);
   letter-spacing: 0;
 }
 
 .h_three {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 33px;
+  line-height: 1.2;
   color: var(--primary-color);
   letter-spacing: 0;
 }
 
 .h_four {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 23px;
+  line-height: 1.2;
   color: var(--primary-color);
   letter-spacing: 0;
 }
 
 .h_five {
-  font-size: 24px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 33px;
+  line-height: 1.2;
   color: var(--primary-color);
   letter-spacing: 0;
 }
 
 .p {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 23px;
+  line-height: 1.4;
   color: var(--primary-color);
   letter-spacing: 0;
   white-space: pre-line;

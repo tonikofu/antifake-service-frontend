@@ -1,13 +1,13 @@
 .sidebar {
   width: fit-content;
-  padding: var(--padding-s);
+  padding: var(--padding-m);
   background-color: var(--white-color);
   position: fixed;
-  left: var(--padding-l);
-  top: 70%;
+  left: var(--padding-xxl);
+  top: 60%;
   transform: translateY(-50%);
   z-index: 100;
-  border: 5px solid var(--primary-color);
+  border: 3px solid var(--primary-color);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

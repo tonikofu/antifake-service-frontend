@@ -35,9 +35,11 @@ const NewsCard = ({ news }: NewsCardProps) => {
       </div>
 
       <Typography.h2 className="news-card__title">{news.title}</Typography.h2>
-      <Typography.p className="news-card__content">
-        {news.article.slice(0, 1024)}...
-      </Typography.p>
+      <div className="news-card__paragraphs">
+        {news.article.slice(0, 1024).split('\n').map((paragraph, idx) =>
+          paragraph.trim() ? <Typography.p key={idx} className="news-card__content">{paragraph}</Typography.p> : null
+        )}
+      </div>
 
       <div className="news-card__footer">
         <Button className="news-card__button" onClick={handleReadMore}>

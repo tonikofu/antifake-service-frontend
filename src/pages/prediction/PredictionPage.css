@@ -8,7 +8,7 @@
 }
 
 .prediction-page__form {
-  gap: var(--gap-s);
+  gap: var(--gap-l);
 }
 
 .prediction-page__form-group label {
@@ -24,7 +24,7 @@
 .prediction-page__input,
 .prediction-page__textarea {
   width: 100%;
-  padding: var(--padding-xs);
+  padding: var(--padding-s);
   border: 2px solid var(--primary-color);
   border-radius: 10px;
   font-size: 20px;
@@ -46,7 +46,7 @@
 
 .prediction-page__model-item {
   display: flex;
-  gap: var(--gap-xs);
+  gap: var(--gap-s);
 }
 
 .prediction-page__model-item input[type="checkbox"] {

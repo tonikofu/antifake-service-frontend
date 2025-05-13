@@ -79,7 +79,11 @@ const NewsDetailPage = () => {
           </div>
 
           <Typography.p className="news-detail__content">
-            {news.article}
+            <div className="news-detail__paragraphs">
+              {news.article.split('\n').map((paragraph, idx) =>
+                paragraph.trim() ? <Typography.p key={idx} className="news-detail__content">{paragraph}</Typography.p> : null
+              )}
+            </div>
           </Typography.p>
 
           <div className="news-detail__predictions">

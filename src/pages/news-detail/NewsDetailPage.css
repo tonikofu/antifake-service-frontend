@@ -153,3 +153,9 @@
 .news-detail__source {
   padding-left: var(--padding-xs);
 }
+
+.news-detail__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+}

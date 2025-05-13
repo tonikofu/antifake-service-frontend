@@ -17,24 +17,24 @@
   --font-family: roboto, sans-serif;
 
   /* Spacings */
-  --padding-xs: 16px;
-  --padding-s: 32px;
-  --padding-m: 48px;
-  --padding-l: 64px;
-  --padding-xl: 96px;
-  --padding-xxl: 256px;
-  --margin-xs: 16px;
-  --margin-s: 32px;
-  --margin-m: 50px;
-  --margin-l: 65px;
-  --margin-xl: 85px;
-  --margin-xxl: 110px;
-  --gap-xs: 16px;
-  --gap-s: 24px;
-  --gap-m: 32px;
-  --gap-l: 40px;
-  --gap-xl: 48px;
-  --gap-xxl: 56px;
+  --padding-xs: 8px;
+  --padding-s: 12px;
+  --padding-m: 16px;
+  --padding-l: 32px;
+  --padding-xl: 48px;
+  --padding-xxl: 80px;
+  --margin-xs: 8px;
+  --margin-s: 16px;
+  --margin-m: 24px;
+  --margin-l: 32px;
+  --margin-xl: 48px;
+  --margin-xxl: 80px;
+  --gap-xs: 8px;
+  --gap-s: 12px;
+  --gap-m: 16px;
+  --gap-l: 24px;
+  --gap-xl: 32px;
+  --gap-xxl: 40px;
 }
 
 * {

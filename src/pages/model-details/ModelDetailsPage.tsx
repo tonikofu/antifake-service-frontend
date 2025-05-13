@@ -5,6 +5,7 @@ import { fetchModelDetails, ModelDetails } from "@/shared/api/modelsApi";
 import "./ModelDetailsPage.css";
 import Container from "@/shared/ui/container/Container";
 import Button from "@/shared/ui/button/Button";
+import Status from "@/shared/ui/status/Status";
 
 const ModelDetailsPage: React.FC = () => {
   const { modelId } = useParams<{ modelId: string }>();
@@ -96,7 +97,15 @@ const ModelDetailsPage: React.FC = () => {
               <tbody>
                 {modelDetails.metrics.map((metric) => (
                   <tr key={metric.classId}>
-                    <td>{metric.className}</td>
+                    <td>
+                      {metric.className === 'TRUE' || metric.className === 'FAKE' ? (
+                        <Status status={metric.className === 'TRUE' ? 'high' : 'low'}>
+                          {metric.className === 'TRUE' ? 'ПРАВДА' : 'ФЕЙК'}
+                        </Status>
+                      ) : (
+                        metric.className
+                      )}
+                    </td>
                     <td>{metric.precision.toFixed(2)}</td>
                     <td>{metric.recall.toFixed(2)}</td>
                     <td>{metric.f1Score.toFixed(2)}</td>
