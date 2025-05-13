@@ -88,13 +88,8 @@
 }
 
 .news-detail__prediction-item:hover {
-  background-color: var(--primary-color-light);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.news-detail__prediction-item:active {
   background-color: var(--primary-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .news-detail__prediction-item:focus {
