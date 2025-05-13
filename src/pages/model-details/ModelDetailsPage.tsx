@@ -5,6 +5,7 @@ import { fetchModelDetails, ModelDetails } from "@/shared/api/modelsApi";
 import "./ModelDetailsPage.css";
 import Container from "@/shared/ui/container/Container";
 import Button from "@/shared/ui/button/Button";
+
 const ModelDetailsPage: React.FC = () => {
   const { modelId } = useParams<{ modelId: string }>();
   const navigate = useNavigate();
@@ -47,31 +48,64 @@ const ModelDetailsPage: React.FC = () => {
         <Button onClick={handleBack}>Назад</Button>
       </div>
       <Container>
-        <Typography.h2>{modelDetails.modelName}</Typography.h2>
+        <div className="model-details__content">
+          <div className="model-details__header">
+            <Typography.h2>{modelDetails.modelName}</Typography.h2>
+            {modelDetails.modelDescription && (
+              <Typography.p className="model-details__description">
+                {modelDetails.modelDescription}
+              </Typography.p>
+            )}
+          </div>
 
-        <div className="model-details__table-container">
-          <table className="model-details__table">
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1-Score</th>
-                <th>Support</th>
-              </tr>
-            </thead>
-            <tbody>
-              {modelDetails.metrics.map((metric) => (
-                <tr key={metric.classId}>
-                  <td>{metric.className}</td>
-                  <td>{metric.precision.toFixed(2)}</td>
-                  <td>{metric.recall.toFixed(2)}</td>
-                  <td>{metric.f1Score.toFixed(2)}</td>
-                  <td>{metric.support}</td>
+          <div className="model-details__plots">
+            {modelDetails.accuracyPlotImage && (
+              <div className="model-details__plot-container">
+                <Typography.h3>График точности</Typography.h3>
+                <img 
+                  src={`/api/images/${modelDetails.accuracyPlotImage}`}
+                  alt="График точности модели"
+                  className="model-details__plot"
+                />
+              </div>
+            )}
+            {modelDetails.lossFunctionPlotImage && (
+              <div className="model-details__plot-container">
+                <Typography.h3>График функции потерь</Typography.h3>
+                <img 
+                  src={`/api/images/${modelDetails.lossFunctionPlotImage}`}
+                  alt="График функции потерь"
+                  className="model-details__plot"
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="model-details__table-container">
+            <Typography.h3>Метрики модели</Typography.h3>
+            <table className="model-details__table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                  <th>Support</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {modelDetails.metrics.map((metric) => (
+                  <tr key={metric.classId}>
+                    <td>{metric.className}</td>
+                    <td>{metric.precision.toFixed(2)}</td>
+                    <td>{metric.recall.toFixed(2)}</td>
+                    <td>{metric.f1Score.toFixed(2)}</td>
+                    <td>{metric.support}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </Container>
     </React.Fragment>

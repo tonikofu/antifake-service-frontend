@@ -1,0 +1,12 @@
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.contentWrapper > :first-child {
+  flex: 1;
+  min-width: 0;
+} 

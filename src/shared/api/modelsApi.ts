@@ -25,6 +25,9 @@ export interface ModelMetrics {
 export interface ModelDetails {
   modelId: number;
   modelName: string;
+  modelDescription: string;
+  accuracyPlotImage: string;
+  lossFunctionPlotImage: string;
   metrics: ModelMetrics[];
 }
 

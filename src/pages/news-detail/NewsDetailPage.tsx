@@ -40,6 +40,10 @@ const NewsDetailPage = () => {
     navigate("/news");
   };
 
+  const handleModelClick = (modelId: number) => {
+    navigate(`/models/${modelId}`);
+  };
+
   if (loading) {
     return <Typography.h2>Загрузка...</Typography.h2>;
   }
@@ -82,7 +86,18 @@ const NewsDetailPage = () => {
             <Typography.h3>Предсказания моделей</Typography.h3>
             <div className="news-detail__predictions-list">
               {news.predictions.map((prediction, index) => (
-                <div key={index} className="news-detail__prediction-item">
+                <div 
+                  key={index} 
+                  className="news-detail__prediction-item"
+                  onClick={() => handleModelClick(prediction.modelId)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleModelClick(prediction.modelId);
+                    }
+                  }}
+                >
                   <Typography.p className="news-detail__model-name">
                     {prediction.modelName}
                   </Typography.p>
