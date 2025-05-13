@@ -3,7 +3,7 @@
 }
 
 .prediction-page__title {
-  margin-top: var(--margin-m);
+  margin-top: var(--margin-l);
   margin-bottom: var(--margin-m);
 }
 
@@ -27,7 +27,7 @@
   padding: var(--padding-s);
   border: 2px solid var(--primary-color);
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-family: var(--font-family);
   line-height: 19px;
   color: var(--text-color);

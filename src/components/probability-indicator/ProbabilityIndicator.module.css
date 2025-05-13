@@ -3,8 +3,8 @@
   padding: var(--padding-m);
   background-color: var(--white-color);
   position: fixed;
-  left: var(--padding-xxl);
-  top: 60%;
+  left: 10%;
+  top: 325px;
   transform: translateY(-50%);
   z-index: 100;
   border: 3px solid var(--primary-color);

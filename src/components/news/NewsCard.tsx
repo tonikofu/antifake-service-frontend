@@ -25,7 +25,7 @@ const NewsCard = ({ news }: NewsCardProps) => {
       <div className="news-card__info">
         <div className="news-card__prediction">
           <Status status={news.className === "FAKE" ? "low" : "high"}>
-            {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
+            {news.className === "FAKE" ? "Фейк" : "Правда"}
           </Status>
           <Typography.p>{news.probability.toFixed(1)}%</Typography.p>
         </div>

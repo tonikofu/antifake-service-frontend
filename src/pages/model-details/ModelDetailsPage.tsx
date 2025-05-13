@@ -103,7 +103,7 @@ const ModelDetailsPage: React.FC = () => {
                         <Status
                           status={metric.className === "TRUE" ? "high" : "low"}
                         >
-                          {metric.className === "TRUE" ? "ПРАВДА" : "ФЕЙК"}
+                          {metric.className === "TRUE" ? "Правда" : "Фейк"}
                         </Status>
                       ) : (
                         metric.className

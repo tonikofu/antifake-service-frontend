@@ -73,7 +73,7 @@
   flex-direction: column;
   gap: var(--gap-s);
   background-color: var(--white-color);
-  padding: var(--padding-s);
+  padding: var(--padding-m);
   border-radius: 8px;
   border: 2px solid var(--primary-color);
 }
@@ -86,7 +86,7 @@
 
 .model-details__table-container {
   background-color: var(--white-color);
-  padding: var(--padding-s);
+  padding: var(--padding-m);
   border-radius: 8px;
   border: 2px solid var(--primary-color);
 }

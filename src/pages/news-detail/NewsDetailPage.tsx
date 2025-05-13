@@ -73,7 +73,7 @@ const NewsDetailPage = () => {
 
           <div className="news-detail__prediction">
             <Status status={news.className === "FAKE" ? "low" : "high"}>
-              {news.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
+              {news.className === "FAKE" ? "Фейк" : "Правда"}
             </Status>
             <Typography.p>{news.probability.toFixed(2)}%</Typography.p>
           </div>
@@ -112,7 +112,7 @@ const NewsDetailPage = () => {
                   <Status
                     status={prediction.className === "FAKE" ? "low" : "high"}
                   >
-                    {prediction.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
+                    {prediction.className === "FAKE" ? "Фейк" : "Правда"}
                   </Status>
                   <Typography.p>
                     {prediction.probability.toFixed(2)}%
