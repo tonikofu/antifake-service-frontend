@@ -98,9 +98,12 @@ const ModelDetailsPage: React.FC = () => {
                 {modelDetails.metrics.map((metric) => (
                   <tr key={metric.classId}>
                     <td>
-                      {metric.className === 'TRUE' || metric.className === 'FAKE' ? (
-                        <Status status={metric.className === 'TRUE' ? 'high' : 'low'}>
-                          {metric.className === 'TRUE' ? 'ПРАВДА' : 'ФЕЙК'}
+                      {metric.className === "TRUE" ||
+                      metric.className === "FAKE" ? (
+                        <Status
+                          status={metric.className === "TRUE" ? "high" : "low"}
+                        >
+                          {metric.className === "TRUE" ? "ПРАВДА" : "ФЕЙК"}
                         </Status>
                       ) : (
                         metric.className

@@ -80,8 +80,12 @@ const NewsDetailPage = () => {
 
           <Typography.p className="news-detail__content">
             <div className="news-detail__paragraphs">
-              {news.article.split('\n').map((paragraph, idx) =>
-                paragraph.trim() ? <Typography.p key={idx} className="news-detail__content">{paragraph}</Typography.p> : null
+              {news.article.split("\n").map((paragraph, idx) =>
+                paragraph.trim() ? (
+                  <Typography.p key={idx} className="news-detail__content">
+                    {paragraph}
+                  </Typography.p>
+                ) : null,
               )}
             </div>
           </Typography.p>
