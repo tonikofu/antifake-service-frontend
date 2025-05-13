@@ -62,7 +62,7 @@ const ModelDetailsPage: React.FC = () => {
             {modelDetails.accuracyPlotImage && (
               <div className="model-details__plot-container">
                 <Typography.h3>График точности</Typography.h3>
-                <img 
+                <img
                   src={`/api/images/${modelDetails.accuracyPlotImage}`}
                   alt="График точности модели"
                   className="model-details__plot"
@@ -72,7 +72,7 @@ const ModelDetailsPage: React.FC = () => {
             {modelDetails.lossFunctionPlotImage && (
               <div className="model-details__plot-container">
                 <Typography.h3>График функции потерь</Typography.h3>
-                <img 
+                <img
                   src={`/api/images/${modelDetails.lossFunctionPlotImage}`}
                   alt="График функции потерь"
                   className="model-details__plot"

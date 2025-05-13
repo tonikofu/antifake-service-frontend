@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import Main from "@/components/main/Main";
 import PageContainer from "@/shared/ui/page-container/PageContainer";
 import ProbabilityIndicator from "@/components/probability-indicator/ProbabilityIndicator";
-import styles from './PageLayout.module.css';
+import styles from "./PageLayout.module.css";
 
 export type GameLayoutProps = {
   children: React.ReactNode;

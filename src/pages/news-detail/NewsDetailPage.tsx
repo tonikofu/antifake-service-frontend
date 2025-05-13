@@ -86,14 +86,14 @@ const NewsDetailPage = () => {
             <Typography.h3>Предсказания моделей</Typography.h3>
             <div className="news-detail__predictions-list">
               {news.predictions.map((prediction, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="news-detail__prediction-item"
                   onClick={() => handleModelClick(prediction.modelId)}
                   role="button"
                   tabIndex={0}
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.key === "Enter" || e.key === " ") {
                       handleModelClick(prediction.modelId);
                     }
                   }}
@@ -106,7 +106,9 @@ const NewsDetailPage = () => {
                   >
                     {prediction.className === "FAKE" ? "ФЕЙК" : "ПРАВДА"}
                   </Status>
-                  <Typography.p>{prediction.probability.toFixed(2)}%</Typography.p>
+                  <Typography.p>
+                    {prediction.probability.toFixed(2)}%
+                  </Typography.p>
                 </div>
               ))}
             </div>

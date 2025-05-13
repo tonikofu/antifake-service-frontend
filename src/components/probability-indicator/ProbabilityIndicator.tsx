@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './ProbabilityIndicator.module.css';
-import Status from '@/shared/ui/status/Status';
+import React from "react";
+import styles from "./ProbabilityIndicator.module.css";
+import Status from "@/shared/ui/status/Status";
 
 const ProbabilityIndicator = () => {
   return (
@@ -14,7 +14,7 @@ const ProbabilityIndicator = () => {
             <span>0%</span>
           </div>
           <div className={styles.scale}>
-            <div className={styles.marker} style={{ bottom: '50%' }}></div>
+            <div className={styles.marker} style={{ bottom: "50%" }}></div>
           </div>
         </div>
         <Status status="low">Фейк</Status>
@@ -23,4 +23,4 @@ const ProbabilityIndicator = () => {
   );
 };
 
-export default ProbabilityIndicator; 
+export default ProbabilityIndicator;

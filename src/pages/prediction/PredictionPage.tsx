@@ -55,7 +55,10 @@ const PredictionPage = () => {
   };
 
   const isFormValid =
-    title.trim() !== "" && source.trim() !== "" && content.trim() !== "" && selectedModels.length > 0;
+    title.trim() !== "" &&
+    source.trim() !== "" &&
+    content.trim() !== "" &&
+    selectedModels.length > 0;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
